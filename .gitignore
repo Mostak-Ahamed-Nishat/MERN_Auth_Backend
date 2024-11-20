@@ -1,0 +1,42 @@
+# Node modules  
+node_modules/  
+
+# Logs  
+logs  
+*.log  
+npm-debug.log*  
+
+# Environment Files  
+.env  
+.env.local  
+.env.*.local  
+
+# Build outputs  
+dist/  
+build/  
+
+# Temporary files  
+tmp/  
+temp/  
+
+# Coverage folders  
+coverage/  
+
+# IDE and Editor files  
+.vscode/  
+.idea/  
+*.sublime-workspace  
+*.sublime-project  
+
+# OS-specific files  
+.DS_Store  
+Thumbs.db  
+
+# Yarn integrity file  
+.yarn-integrity  
+
+# Optional npm cache directory  
+.npm/  
+
+# Test coverage  
+*.lcov  
