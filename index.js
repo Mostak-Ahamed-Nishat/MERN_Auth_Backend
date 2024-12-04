@@ -4,8 +4,9 @@ import cookieParser from "cookie-parser";
 import {
   errorMiddleware,
   notFoundMiddleware,
-} from "./middleware/errorMiddleware";
-import dbConnection from "./config/db";
+} from "./middleware/errorMiddleware.js";
+import dbConnection from "./config/db.js";
+import userRoute from "./route/userRoute.js";
 
 dotenv.config();
 const app = express();
@@ -24,14 +25,14 @@ app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
-app.use("/api/v1/", );
+app.use("/api/v1", userRoute);
 
 //Connect Database
 dbConnection();
 
 //Error Middleware
-app.use(errorMiddleware);
 app.use(notFoundMiddleware);
+app.use(errorMiddleware);
 
 app.listen(8000, () => {
   console.log("Server running on http://localhost:8000");

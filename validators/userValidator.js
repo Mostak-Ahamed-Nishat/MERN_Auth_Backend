@@ -1,5 +1,5 @@
 // userValidation.js
-const Joi = require("joi");
+import Joi from "joi";
 
 // Define the validation schema
 const userValidationSchema = Joi.object({
@@ -45,4 +45,4 @@ const userValidationSchema = Joi.object({
 });
 
 // Export the validation schema
-module.exports = userValidationSchema;
+export default userValidationSchema;

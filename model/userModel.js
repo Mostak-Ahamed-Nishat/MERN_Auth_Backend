@@ -20,14 +20,20 @@ const userSchema = mongoose.Schema({
     required: true,
   },
   role: {
-    type: String,
-    enum: ["superadmin", "admin", "salesman"],
-    default: "salesman",
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Role",
+    required: true,
   },
+  customPermissions: [
+    {
+      permission: { type: mongoose.Schema.Types.ObjectId, ref: "Permission" },
+      actions: [{ type: String, enum: ["view", "edit", "update", "delete"] }],
+    },
+  ],
   verificationToken: {
     type: String,
-    default: () => Date.now() + 5 * 60 * 1000,
   },
+
   verificationExpired: {
     type: Date,
   },
